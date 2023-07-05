@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-25 09:58:10
- * @LastEditTime: 2023-07-05 21:24:51
+ * @LastEditTime: 2023-07-05 21:42:51
  * @LastEditors: Jackie
  * @Description: file content
  * @FilePath: /vue3-element-plus-demo/src/views/HomeView.vue
@@ -18,9 +18,12 @@
       <el-button type="warning">Warning</el-button>
       <el-button type="danger">Danger</el-button>
     </el-row>
+    <DemoTest></DemoTest>
   </div>
 </template>
-
+<script setup>
+import DemoTest from '@/components/DemoTest.vue';
+</script>
 <script>
 export default {
   name: 'HomeView',
