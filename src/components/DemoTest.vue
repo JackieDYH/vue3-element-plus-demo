@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-05 21:34:14
- * @LastEditTime: 2023-07-05 21:55:50
+ * @LastEditTime: 2023-07-06 10:09:56
  * @LastEditors: Jackie
  * @Description: 测试
  * @FilePath: /vue3-element-plus-demo/src/components/DemoTest.vue
@@ -14,6 +14,7 @@
       :marks="sliderMarks"
       :min="SLIDER_MIN"
       :max="SLIDER_MAX"
+      class="follow-form-slider"
     />
     <MarkSlider
       v-model:value="sliderValue"
@@ -21,12 +22,23 @@
       :min="SLIDER_MIN"
       :max="SLIDER_MAX"
     />
+    <el-button @click="onShowDialog(true)">按钮</el-button>
+    <ClosingDialog v-model="isShow" @onChangeDialog="onChangeDialog" />
   </div>
 </template>
 
 <script setup>
 import MarkSlider from '@/components/MarkSlider/index.vue';
 import { computed, reactive, ref, watch } from 'vue';
+import ClosingDialog from '@/components/ClosingDialog/index.vue';
+const isShow = ref(false);
+const onShowDialog = (show) => {
+  isShow.value = show;
+};
+const onChangeDialog = (val) => {
+  console.log('onChangeDialog', val);
+  isShow.value = false;
+};
 const sliderValue = ref(0);
 const SLIDER_MIN = 0;
 const SLIDER_MAX = 180;
@@ -76,4 +88,25 @@ const sliderMarks2 = computed(() => [
 ]);
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+:deep(.follow-form-radio) {
+  --el-radio-font-size: 12px;
+  --el-radio-text-color: #868e9b;
+  --el-radio-input-border-color-hover: #31daff; // @long-color;
+  --el-radio-input-border-radius: 2px;
+  .el-radio__input.is-checked + .el-radio__label {
+    color: #31daff; //@long-color;
+  }
+  /* .el-radio__input.is-checked .el-radio__inner {
+    border-color: #31daff; //@long-color;
+    background: #fff;
+    &::after {
+      background: center/contain url(@/assets/images/followOrder/checked.png)
+        no-repeat;
+      z-index: 2;
+      width: 16px;
+      height: 16px;
+    }
+  } */
+}
+</style>

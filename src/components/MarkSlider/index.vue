@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-05 21:30:36
- * @LastEditTime: 2023-07-05 21:43:44
+ * @LastEditTime: 2023-07-06 09:52:21
  * @LastEditors: Jackie
  * @Description: 滑块
  * @FilePath: /vue3-element-plus-demo/src/components/MarkSlider/index.vue
@@ -94,7 +94,7 @@ export default {
   }
   :deep(.el-slider) {
     --el-slider-runway-bg-color: #404040;
-    --el-slider-main-bg-color: #fff;
+    --el-slider-main-bg-color: #926464;
     .el-slider__button-wrapper {
       z-index: 2;
       .el-slider__button {
