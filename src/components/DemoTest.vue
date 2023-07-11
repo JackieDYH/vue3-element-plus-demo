@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-07-05 21:34:14
- * @LastEditTime: 2023-07-06 10:09:56
+ * @LastEditTime: 2023-07-11 15:26:22
  * @LastEditors: Jackie
  * @Description: 测试
  * @FilePath: /vue3-element-plus-demo/src/components/DemoTest.vue
@@ -24,6 +24,7 @@
     />
     <el-button @click="onShowDialog(true)">按钮</el-button>
     <ClosingDialog v-model="isShow" @onChangeDialog="onChangeDialog" />
+    <Update />
   </div>
 </template>
 
@@ -31,6 +32,7 @@
 import MarkSlider from '@/components/MarkSlider/index.vue';
 import { computed, reactive, ref, watch } from 'vue';
 import ClosingDialog from '@/components/ClosingDialog/index.vue';
+import Update from '@/components/Update/index.vue';
 const isShow = ref(false);
 const onShowDialog = (show) => {
   isShow.value = show;
